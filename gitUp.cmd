@@ -11,7 +11,7 @@ git pull rito master
 
 git add .
 
-git commit -m "%date%--%memo%"
+git commit -m "[%date%] %memo%"
 
 git push rito master
 
