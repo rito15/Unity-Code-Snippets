@@ -1,6 +1,9 @@
 @echo off
 
 chcp 65001
+cls
+
+set /p memo="업로드 내용 > "
 
 cd .
 
@@ -8,7 +11,7 @@ git pull rito master
 
 git add .
 
-git commit -m "%date%"
+git commit -m "%date%--%memo%"
 
 git push rito master
 
