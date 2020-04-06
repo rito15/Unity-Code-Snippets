@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+           <Title>Singleton Auto Loading Code</Title>
+           <Author>Rito</Author>
+           <Description>Singleton Auto Loading Code Sinppet</Description>
+           <Shortcut>singletonAutoLoad</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>className</ID>
+                <ToolTip>클래스명</ToolTip>
+                <Default>__ClassName__</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[#region Singleton - Auto Loading Method
+
+                [UnityEditor.InitializeOnEnterPlayMode]
+                public static void OnEnterPlayMode() => SingletonAutoLoader.Run<$className$>();
+
+                #endregion // ==================================================================
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
