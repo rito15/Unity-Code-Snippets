@@ -2,10 +2,10 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
     <CodeSnippet Format="1.0.0">
         <Header>
-           <Title>Singleton Auto Loading Code</Title>
+           <Title>Singleton Auto-Generating Code</Title>
            <Author>Rito</Author>
-           <Description>Singleton Auto Loading Code Sinppet</Description>
-           <Shortcut>singletonAutoLoad</Shortcut>
+           <Description>Singleton Auto-Generating Code Sinppet</Description>
+           <Shortcut>singletonAutoGen</Shortcut>
         </Header>
         <Snippet>
             <Declarations>
@@ -16,10 +16,11 @@
               </Literal>
             </Declarations>
             <Code Language="CSharp">
-                <![CDATA[#region Singleton - Auto Loading Method
+                <![CDATA[#region Singleton - Auto Gen Method
 
-                [UnityEditor.InitializeOnEnterPlayMode]
-                public static void OnEnterPlayMode() => SingletonAutoLoader.Run<$className$>();
+                // OnEnable() ~ Start() 사이에 호출
+                [RuntimeInitializeOnLoadMethod]
+                static void AutoGenerate() => Call_();
 
                 #endregion // ==================================================================
                 ]]>
