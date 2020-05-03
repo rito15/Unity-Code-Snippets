@@ -16,7 +16,7 @@
                 private IEnumerator $selected$$end$Routine()
                 {
                     yield return new WaitForEndOfFrame();
-                    WaitForSeconds WFS = new WaitForSeconds(0.01f);
+                    var WFS = new WaitForSeconds(0.01f);
                     
                     /* Thread */
                     while(true)
