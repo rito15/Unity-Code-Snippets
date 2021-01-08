@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+           <Title>Singleton Class</Title>
+           <Author>Rito</Author>
+           <Description>Simple Singleton Class Code Sinppet</Description>
+           <Shortcut>simpleSingleton</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>className</ID>
+                <ToolTip>클래스명</ToolTip>
+                <Default>__ClassName__</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[#region Simple Singleton
+
+                /// <summary> 싱글톤 인스턴스 Getter </summary>
+                public static $className$$selected$$end$ Instance
+                {
+                    get
+                    {
+                        if (instance == null)    // 체크 1 : 인스턴스가 없는 경우
+                            CheckExsistence();
+
+                        return instance;
+                    }
+                }
+
+                /// <summary> 싱글톤 인스턴스 </summary>
+                public static $className$ I => Instance;
+
+                public void Call() { }
+                public static void Call_()
+                {
+                    if (instance == null)
+                        CheckExsistence();
+                }
+
+                // 싱글톤 인스턴스
+                private static $className$ instance;
+                private static void CheckExsistence()
+                {
+                    instance = FindObjectOfType<$className$>();
+
+                    if (instance == null)
+                    {
+                        GameObject container = new GameObject("$className$ Singleton");
+                        instance = container.AddComponent<$className$>();
+                    }
+                }
+
+                #endregion // ==================================================================
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
