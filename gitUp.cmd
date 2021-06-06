@@ -7,13 +7,13 @@ set /p memo="업로드 내용 > "
 
 cd .
 
-git pull rito master
+git pull origin master
 
 git add .
 
 git commit -m "[%date%] %memo%"
 
-git push rito master
+git push origin master
 
 echo.======================
 echo. 깃헙 업로드 완료 !
